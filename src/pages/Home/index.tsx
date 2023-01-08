@@ -1,7 +1,6 @@
-import "./App.css";
-import CellNumberForm from "./components/CellNumberForm";
+import CellNumberForm from "../../components/CellNumberForm";
 
-function App() {
+export default function Home() {
   return (
     <>
       <h1>What's Up?</h1>
@@ -11,5 +10,3 @@ function App() {
     </>
   );
 }
-
-export default App;

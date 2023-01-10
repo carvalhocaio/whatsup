@@ -1,5 +1,5 @@
+import { Button, Heading } from "@chakra-ui/react";
 import { memo, useCallback } from "react";
-import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 function NotFound() {
@@ -10,17 +10,15 @@ function NotFound() {
 
   return (
     <>
-      <h1>Not Found!</h1>
-      <h2>Go back to home page</h2>
-
+      <Heading size="3xl">Ops! Not Found!</Heading>
       <Button
-        color="success"
-        variant="outlined"
-        disableElevation
-        size="large"
+        m={10}
+        size="lg"
+        variant="link"
+        colorScheme="whatsapp"
         onClick={goHome}
       >
-        Click Here
+        Click here to back home page
       </Button>
     </>
   );

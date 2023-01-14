@@ -10,7 +10,7 @@ import {
   Stack,
   StackDivider,
 } from "@chakra-ui/react";
-import { useState, RefObject } from "react";
+import { useState, RefObject, ChangeEvent } from "react";
 import { useIMask } from "react-imask";
 import { ImWhatsapp } from "react-icons/im";
 import sendWhatsAppMessage from "../../services/sendWhatsAppMessage";
@@ -19,6 +19,12 @@ export default function PhoneNumber() {
   const { ref, setValue } = useIMask({ mask: "(00) 9 0000-0000" });
 
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [buttonState, setButtonState] = useState(true);
+
+  function handlePhoneNumber(event: ChangeEvent<HTMLInputElement>) {
+    setPhoneNumber(event.target.value);
+    event.target.value.length == 16 && setButtonState(false);
+  }
 
   async function sendMessage(phoneNumber: string) {
     await sendWhatsAppMessage(phoneNumber);
@@ -38,7 +44,7 @@ export default function PhoneNumber() {
             <Input
               focusBorderColor="green.500"
               placeholder="(00) 9 0000-0000"
-              onChange={(event) => setPhoneNumber(event.target.value)}
+              onChange={(event) => handlePhoneNumber(event)}
               ref={ref as RefObject<HTMLInputElement>}
               autoFocus
             />
@@ -50,6 +56,7 @@ export default function PhoneNumber() {
       </Stack>
 
       <Button
+        disabled={buttonState}
         rightIcon={<ImWhatsapp />}
         colorScheme="whatsapp"
         size="lg"

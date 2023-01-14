@@ -6,7 +6,7 @@ But now we can use the [What's Up?](https://whatsup-six.vercel.app)
 
 We inform the cell number that we desire to send a message.
 
-<img width="685" alt="image" src="https://user-images.githubusercontent.com/51205748/211453786-c3d9188b-ad7f-4848-9bc9-0a31ed717b30.png">
+![Screenshot 2023-01-13 at 11 00 24 PM](https://user-images.githubusercontent.com/51205748/212447863-597b5e3f-68e1-4c1b-b765-0b5c54f806c2.png)
 
 ---
 
